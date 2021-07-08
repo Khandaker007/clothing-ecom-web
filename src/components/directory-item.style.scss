@@ -3,26 +3,50 @@
 .item-sneakers,
 .item-womens,
 .item-mens{
-    background-position: center;
-    background-size: cover;
+    
     border: 1px solid black;
+    overflow: hidden;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
+    .background-image{
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+
+    &:hover{
+        cursor: pointer;
+
+        & .background-image{
+            transform: scale(1.1);
+            transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+        }
+
+        & .content{
+            opacity: .9;
+        }
+    }
+
     .content{
-        background-color: rgba($color: #fff, $alpha: .7);
+        background-color: #fff;
         padding: 1rem 2rem;
         text-transform: uppercase;
         line-height: 1.4;
         color: black;
         border: 1px solid black;
+        position: absolute;
+        opacity: .5;
 
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        transition: opacity .6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 
         &__title{
             display: block;
