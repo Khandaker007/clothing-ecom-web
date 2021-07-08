@@ -1,0 +1,58 @@
+.item-hats,
+.item-jackets,
+.item-sneakers,
+.item-womens,
+.item-mens{
+    background-position: center;
+    background-size: cover;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content{
+        background-color: rgba($color: #fff, $alpha: .7);
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        line-height: 1.4;
+        color: black;
+        border: 1px solid black;
+
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+
+        &__title{
+            display: block;
+
+        }
+        &__subtitle{
+            font-weight: 600;
+        }
+        
+    }
+}
+
+.item-hats{
+    grid-column: col-start 1 / col-end 2;
+    grid-row: row-start 1 / row-end 2;
+}
+.item-jackets{
+    grid-column: col-start 3 / col-end 4;
+    grid-row: row-start 1 / row-end 2;
+}
+
+.item-sneakers{
+    grid-column: col-start 5 / col-end 6;
+    grid-row: row-start 1 / row-end 2;
+}
+.item-womens{
+    grid-column: col-start 1 / col-end 3;
+    grid-row: row-start 3 / -1;
+}
+.item-mens{
+    grid-column: col-start 4 / -1;
+    grid-row: row-start 3 / -1;
+}

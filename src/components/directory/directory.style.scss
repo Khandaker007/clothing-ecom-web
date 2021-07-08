@@ -1,0 +1,9 @@
+.directory{
+    padding: 2rem 4rem;
+
+    display: grid;
+    grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
+    grid-template-rows: repeat(5, [row-start] 15vh [row-end]);
+    grid-gap: 1.5rem;
+
+}
