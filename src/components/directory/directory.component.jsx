@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 // COMPONENT
-import DirectoryItem from '../directory-item.component';
+import DirectoryItem from '../directory-item/directory-item.component';
 
 // DATA
 import {DIRECTORY_ITEM_DATA} from '../../datas/directory.data'

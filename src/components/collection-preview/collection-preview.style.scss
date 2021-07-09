@@ -1,0 +1,14 @@
+.collection-preview{
+    background-color: orangered;
+    &__title{
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+}
+.preview{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 2rem;
+    margin: 2rem 0;
+}
