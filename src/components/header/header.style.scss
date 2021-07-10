@@ -1,0 +1,23 @@
+.header{
+    padding: 2rem 4rem 0 4rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &__options{
+        font-size: 1.6rem;
+        font-weight: 500;
+        text-transform: uppercase;
+
+    }
+
+    &__option{
+        text-decoration: none;
+        color: grey;
+
+        &:not(:last-child){
+            margin-right: 1.5rem;
+        }
+    }
+}

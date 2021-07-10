@@ -9,6 +9,7 @@ import WomensPage from './pages/womens/womens.component'
 import JacketsPage from './pages/jackets/jackets.component'
 import SneakersPage from './pages/sneakers/sneakers.component'
 import HatsPage from './pages/hats/hats.component'
+import Header from './components/header/header.components'
 
 import './App.scss'
 
@@ -18,6 +19,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
+      <Header/>
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />
