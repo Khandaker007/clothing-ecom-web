@@ -4,12 +4,14 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 // COMPONENTS
 import HomePage from './pages/home-page/home-page.component'
 import ShopPage from './pages/shop/shop.component'
+import Header from './components/header/header.components'
+import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component'
+
 import MensPage from './pages/mens/mens.component'
 import WomensPage from './pages/womens/womens.component'
 import JacketsPage from './pages/jackets/jackets.component'
 import SneakersPage from './pages/sneakers/sneakers.component'
 import HatsPage from './pages/hats/hats.component'
-import Header from './components/header/header.components'
 
 import './App.scss'
 
@@ -23,6 +25,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />
+        <Route path='/sign-in' component={SignInAndSignUpPage} />
         <Route path='/mens' component={MensPage} />
         <Route path='/womens' component={WomensPage} />
         <Route path='/jackets' component={JacketsPage} />

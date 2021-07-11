@@ -1,0 +1,53 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variable.scss';
+
+$color-main: black;
+$color-second: grey;
+
+.form-input-group{
+    margin: 4rem 0;
+    position: relative;
+}
+
+.form-input{
+    padding: 1rem 1rem 1rem .5rem;
+    font-size: 1.6rem;
+    color: $color-main;
+    border: none;
+    border-bottom: 1.5px solid $color-second;
+    width: 100%;
+    background-color: transparent;
+    position: relative;
+    z-index: 10;
+
+    &:focus{
+        outline: none;
+        // border: solid white;
+    }
+
+    &:focus ~ .form-input-label{
+        @include shrinkLabel();
+    }
+
+    &[type = 'password']{
+        letter-spacing: .4rem;
+    }
+
+}
+
+.form-input-label{
+    background: none;
+    font-size: 1.6rem;
+    color: $color-second;
+    font-weight: 500;
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+
+    transition: all .2s;
+
+}
+
+.shrink{
+    @include shrinkLabel();
+}

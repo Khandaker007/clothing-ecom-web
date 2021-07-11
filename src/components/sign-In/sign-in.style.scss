@@ -1,0 +1,52 @@
+@import '../../sass/variable.scss';
+
+.sign-in{
+    // background-color: orangered;
+    padding: 4rem;
+    height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+
+
+    &__heading{
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        color: $color-main;
+        margin-bottom: 4rem;
+        display: block;
+        position: relative;
+
+        &::before{
+            content: '';
+            height: 1px;
+            width: 60%;
+            background-color: $color-second;
+            position: absolute;
+            top: 100%;
+            margin-left: 20%;
+        }
+
+
+    }
+
+    .create-account-link{
+        font-size: 1.3rem;
+        color: black;
+        margin-top: 1rem;
+        width: 30%;
+        
+
+        &:hover{
+            color: blue;
+        }
+    }
+
+    .form-group{
+
+        &:not(:first-child){
+            margin-bottom: 3rem;
+        }
+    }
+}
