@@ -1,0 +1,36 @@
+@import '../../sass/variable.scss';
+
+.sign-up{
+    padding: 4rem;
+    height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+
+    &__heading{
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        color: $color-main;
+        margin: 0 3rem 3rem 3rem;
+        display: block;
+        position: relative;
+
+        &::before{
+            content: '';
+            height: 1px;
+            width: 60%;
+            background-color: $color-second;
+            position: absolute;
+            top: 100%;
+            margin-left: 20%;
+        }
+
+    }
+    
+    .form-group{
+
+        &:not(:first-child){
+            margin-bottom: 1rem;
+        }
+    }
+}

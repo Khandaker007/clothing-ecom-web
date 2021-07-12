@@ -2,9 +2,9 @@ import React from 'react'
 
 import './custom-button.style.scss'
 
-const CustomButton = (text) => (
-    <div className="custom-btn-container">
-        <button className="custom-btn">sign in</button>
+const CustomButton = ({children, ...otherProps}) => (
+    <div className="custom-btn-container" {...otherProps}>
+        <button className="custom-btn">{ children }</button>
     </div>
 )
 

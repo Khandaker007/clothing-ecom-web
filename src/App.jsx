@@ -6,6 +6,7 @@ import HomePage from './pages/home-page/home-page.component'
 import ShopPage from './pages/shop/shop.component'
 import Header from './components/header/header.components'
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component'
+import SignUp from './components/sign-up/sign-up.component'
 
 import MensPage from './pages/mens/mens.component'
 import WomensPage from './pages/womens/womens.component'
@@ -26,6 +27,7 @@ function App() {
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />
         <Route path='/sign-in' component={SignInAndSignUpPage} />
+        <Route path='/sign-up' component={SignUp} />
         <Route path='/mens' component={MensPage} />
         <Route path='/womens' component={WomensPage} />
         <Route path='/jackets' component={JacketsPage} />

@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 // COMPONENTS
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
+import SignUp from '../sign-up/sign-up.component';
 
 import './sign-in.style.scss'
 
@@ -11,6 +12,14 @@ function SignIn(){
     
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    // const [swap, setSwap] = useState(false);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        setEmail('');
+        setPassword('');
+    }
 
     const handleChange = event => {
         const { value, name } = event.target;
@@ -27,11 +36,11 @@ function SignIn(){
    return (
     <div className='sign-in'>
         <h1 className="sign-in__heading">sign in to your account</h1>
-        <form className="form-group">
+        <form onSubmit={handleSubmit} className="form-group">
             <FormInput
                 name='email'
                 type='email'
-                onChange={handleChange}
+                handleChange={handleChange}
                 value={email}
                 label='Email'
                 required
@@ -39,14 +48,15 @@ function SignIn(){
             <FormInput
                 name='password'
                 type='password'
-                onChange={handleChange}
+                handleChange={handleChange}
                 value={password}
                 label='Password'
                 required
             />
+            <CustomButton type='submit'>sign in</CustomButton>
         </form>
-        <CustomButton className='cb' />
-        <Link to='#' className='create-account-link'>create an accout?</Link>
+        <Link to='/sign-up' className='create-account-link'>create an accout?</Link>
+        {/* <a href='#' onClick={!swap}> create an account?</a> */}
     </div>
 )} 
 

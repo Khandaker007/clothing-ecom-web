@@ -1,13 +1,11 @@
 @import '../../sass/variable.scss';
 
 .sign-in{
-    // background-color: orangered;
     padding: 4rem;
     height: 80vh;
 
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
 
 
     &__heading{
@@ -34,7 +32,6 @@
     .create-account-link{
         font-size: 1.3rem;
         color: black;
-        margin-top: 1rem;
         width: 30%;
         
 
@@ -46,7 +43,7 @@
     .form-group{
 
         &:not(:first-child){
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
         }
     }
 }
