@@ -10,12 +10,18 @@ import CustomButton from '../../components/custom-button/custom-button.component
 
 function SignInAndSignUpPage() {
 
-    // const [swap, setSwap] = useState(false);
+    const [swap, setSwap] = useState(false);
 
     return (
         <div className='sign-in-and-sign-out'>
-                <SignIn/>
-                <SignUp/>
+                {
+                    !swap ?
+                    <SignIn handleClick={() => setSwap(true)}/>
+                    :
+                    <SignUp/>
+
+                }
+                {/* <SignUp/> */}
         </div>
     )
 } 

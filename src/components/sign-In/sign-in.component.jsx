@@ -8,7 +8,7 @@ import SignUp from '../sign-up/sign-up.component';
 
 import './sign-in.style.scss'
 
-function SignIn(){
+function SignIn({handleClick}){
     
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -55,8 +55,9 @@ function SignIn(){
             />
             <CustomButton type='submit'>sign in</CustomButton>
         </form>
-        <Link to='/sign-up' className='create-account-link'>create an accout?</Link>
-        {/* <a href='#' onClick={!swap}> create an account?</a> */}
+        {/* <Link to='/sign-up' onClick={handleClick} className='create-account-link'>create an accout?</Link> */}
+        <a href='#' onClick={handleClick} > create an account?</a>
+        {/* <span></span> */}
     </div>
 )} 
 
