@@ -15,7 +15,7 @@ import SneakersPage from './pages/sneakers/sneakers.component'
 import HatsPage from './pages/hats/hats.component'
 
 // FIREBASE
-import {auth} from './firebase/firebase.utils'
+import {auth, createUserProfileDocument} from './firebase/firebase.utils'
 
 import './App.scss'
 
@@ -32,10 +32,10 @@ class App extends React.Component{
   unsubsribeFromAuth = null
 
   componentDidMount(){
-   this.unsubsribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({currentUser: user})
+   this.unsubsribeFromAuth = auth.onAuthStateChanged(async user => {
+      
+    await createUserProfileDocument(user);
 
-      // console.log(this.state.currentUser)
     })
   }
 
