@@ -18,7 +18,7 @@ function SignInAndSignUpPage() {
                     !swap ?
                     <SignIn handleClick={() => setSwap(true)}/>
                     :
-                    <SignUp/>
+                    <SignUp handleClick={() => setSwap(false)}/>
 
                 }
                 {/* <SignUp/> */}

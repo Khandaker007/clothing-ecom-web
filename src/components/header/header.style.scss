@@ -9,12 +9,14 @@
         font-size: 1.6rem;
         font-weight: 500;
         text-transform: uppercase;
+        display: inline-block;
 
     }
 
     &__option{
         text-decoration: none;
         color: grey;
+        cursor: pointer;
 
         &:not(:last-child){
             margin-right: 1.5rem;

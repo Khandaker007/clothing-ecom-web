@@ -14,15 +14,40 @@ import JacketsPage from './pages/jackets/jackets.component'
 import SneakersPage from './pages/sneakers/sneakers.component'
 import HatsPage from './pages/hats/hats.component'
 
+// FIREBASE
+import {auth} from './firebase/firebase.utils'
+
 import './App.scss'
 
-function App() {
-  const [count, setCount] = useState(0)
+class App extends React.Component{
 
-  return (
-    <>
+  constructor(){
+    super();
+
+    this.state = {
+      currentUser: null
+    }
+  }
+
+  unsubsribeFromAuth = null
+
+  componentDidMount(){
+   this.unsubsribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({currentUser: user})
+
+      // console.log(this.state.currentUser)
+    })
+  }
+
+  componentWillUnmount(){
+    this.unsubsribeFromAuth();
+  }
+
+  render (){
+    return (
+    <div>
     <BrowserRouter>
-      <Header/>
+      <Header currentUser={this.state.currentUser}/>
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />
@@ -35,8 +60,8 @@ function App() {
         <Route path='/hats' component={HatsPage} />
       </Switch>
     </BrowserRouter>
-    </>
-  )
+    </div>
+  )}
 }
 
 export default App;

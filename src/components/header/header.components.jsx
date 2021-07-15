@@ -5,7 +5,10 @@ import './header.style.scss'
 
 import logo from '../../assets/logo/crown.svg';
 
-const Header = () => (
+// FIREBASE
+import {auth} from '../../firebase/firebase.utils'
+
+const Header = ({currentUser}) => (
     <div className="header">
         <Link to='/'>
             <img src={logo} alt='logo' className='header__logo' />
@@ -17,9 +20,18 @@ const Header = () => (
             <Link className='header__option' to='/contact'>
                 contact
             </Link>
-            <Link className='header__option' to='/sign-in'>
-                Sign In
-            </Link>
+
+            {
+                currentUser ?
+
+                <span className="header__option" onClick={() => auth.signOut()} >sign out</span>
+
+                :
+
+                <Link className='header__option' to='/sign-in'>
+                    Sign In
+                </Link>
+            }
         </div>
 
     </div>

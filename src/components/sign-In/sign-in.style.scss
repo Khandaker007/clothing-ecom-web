@@ -15,11 +15,12 @@
         margin-bottom: 4rem;
         display: block;
         position: relative;
+        text-align: center;
 
         &::before{
             content: '';
             height: 1px;
-            width: 60%;
+            width: 50%;
             background-color: $color-second;
             position: absolute;
             top: 100%;
@@ -45,5 +46,11 @@
         &:not(:first-child){
             margin-bottom: 1rem;
         }
+    }
+
+    .btn-group{
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        grid-gap: 2rem;
     }
 }

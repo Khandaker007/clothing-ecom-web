@@ -6,6 +6,9 @@ import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 import SignUp from '../sign-up/sign-up.component';
 
+// FIREBASE 
+import { signInWithGoogle } from '../../firebase/firebase.utils';
+
 import './sign-in.style.scss'
 
 function SignIn({handleClick}){
@@ -53,10 +56,13 @@ function SignIn({handleClick}){
                 label='Password'
                 required
             />
-            <CustomButton type='submit'>sign in</CustomButton>
+            <div className="btn-group">
+                <CustomButton type='submit'>sign in</CustomButton>
+                <CustomButton type='submit' onClick={signInWithGoogle} isGoogleSignIn >sign in with google</CustomButton>
+            </div>
         </form>
         {/* <Link to='/sign-up' onClick={handleClick} className='create-account-link'>create an accout?</Link> */}
-        <a href='#' onClick={handleClick} > create an account?</a>
+        <a href='#' className='create-account-link' onClick={handleClick} > create an account?</a>
         {/* <span></span> */}
     </div>
 )} 

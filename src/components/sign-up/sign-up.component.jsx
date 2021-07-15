@@ -6,7 +6,7 @@ import CustomButton from '../custom-button/custom-button.component';
 
 import './sign-up.style.scss'
 
-function SignUp() {
+function SignUp({handleClick}) {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -75,7 +75,10 @@ function SignUp() {
                     label='Confirm Password'
                     required
                 />
-                <CustomButton type='submit'>sign up</CustomButton>
+                <div className="btn-group">
+                    <CustomButton type='submit'>sign up</CustomButton>
+                    <a href='#' className='create-account-link' onClick={handleClick} > Already have an account?</a>
+                </div>
             </form>
 
 

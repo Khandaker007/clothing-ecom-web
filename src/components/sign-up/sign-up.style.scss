@@ -33,4 +33,22 @@
             margin-bottom: 1rem;
         }
     }
+
+    .btn-group{
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        justify-content: space-between;
+        align-items: center;
+        // grid-gap: 2rem;
+    }
+
+    .create-account-link{
+        font-size: 1.3rem;
+        color: black;
+        
+
+        &:hover{
+            color: blue;
+        }
+    }
 }
