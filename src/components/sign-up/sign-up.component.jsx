@@ -4,29 +4,45 @@ import React, {useState} from 'react'
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
+// FIREBASE
+import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
+
 import './sign-up.style.scss'
 
 function SignUp({handleClick}) {
 
-    const [name, setName] = useState('');
+    const [displayName, setDisplayName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
-        setName('');
-        setEmail('');
-        setPassword('');
-        setConfirmPassword('');
+        if(password !== confirmPassword){
+            alert(`your password did'nt match, please try again`)
+            return;
+        }
+
+        try{
+            const { user } = await auth.createUserWithEmailAndPassword(email, password);
+            await createUserProfileDocument(user, { displayName });
+
+            setDisplayName('');
+            setEmail('');
+            setPassword('');
+            setConfirmPassword('');
+
+        }catch(error){
+            console.log(error)
+        }
     }
 
     const handleChange = (event) => {
         const {name, value} = event.target;
 
         if(name == 'name'){
-            setName(value)
+            setDisplayName(value)
         }
         else if (name == 'email'){
             setEmail(value)
@@ -47,7 +63,7 @@ function SignUp({handleClick}) {
                     name='name'
                     type='name'
                     handleChange={handleChange}
-                    value={name}
+                    value={displayName}
                     label='User Name'
                     required
                 />

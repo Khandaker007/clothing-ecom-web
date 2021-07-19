@@ -7,7 +7,7 @@ import CustomButton from '../custom-button/custom-button.component';
 import SignUp from '../sign-up/sign-up.component';
 
 // FIREBASE 
-import { signInWithGoogle } from '../../firebase/firebase.utils';
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
 import './sign-in.style.scss'
 
@@ -15,10 +15,11 @@ function SignIn({handleClick}){
     
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // const [swap, setSwap] = useState(false);
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        auth.signInWithEmailAndPassword(email, password);
 
         setEmail('');
         setPassword('');
@@ -26,8 +27,6 @@ function SignIn({handleClick}){
 
     const handleChange = event => {
         const { value, name } = event.target;
-
-        console.log(name);
 
         if(name == 'email'){
             setEmail(value)
