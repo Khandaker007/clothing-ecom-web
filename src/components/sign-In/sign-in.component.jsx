@@ -57,7 +57,7 @@ function SignIn({handleClick}){
             />
             <div className="btn-group">
                 <CustomButton type='submit'>sign in</CustomButton>
-                <CustomButton type='submit' onClick={signInWithGoogle} isGoogleSignIn >sign in with google</CustomButton>
+                <CustomButton type='button' onClick={signInWithGoogle} isGoogleSignIn >sign in with google</CustomButton>
             </div>
         </form>
         {/* <Link to='/sign-up' onClick={handleClick} className='create-account-link'>create an accout?</Link> */}

@@ -5,8 +5,6 @@ import './sign-in-and-sign-up.style.scss'
 // COMPONENTS
 import SignIn from '../../components/sign-In/sign-in.component';
 import SignUp from '../../components/sign-up/sign-up.component';
-import FormInput from '../../components/form-input/form-input.component';
-import CustomButton from '../../components/custom-button/custom-button.component';
 
 function SignInAndSignUpPage() {
 
@@ -21,7 +19,6 @@ function SignInAndSignUpPage() {
                     <SignUp handleClick={() => setSwap(false)}/>
 
                 }
-                {/* <SignUp/> */}
         </div>
     )
 } 
