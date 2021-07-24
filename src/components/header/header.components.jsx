@@ -9,7 +9,12 @@ import logo from '../../assets/logo/crown.svg';
 // FIREBASE
 import {auth} from '../../firebase/firebase.utils'
 
-const Header = ({currentUser}) => (
+// COMPONENTS
+import CardIcon from '../card-icon/card-icon.component';
+import CardDropdown from '../card-dropdown/card-dropdown.component';
+import CustomButton from '../custom-button/custom-button.component';
+
+const Header = ({currentUser, hidden}) => (
     <div className="header">
         <Link to='/'>
             <img src={logo} alt='logo' className='header__logo' />
@@ -33,13 +38,19 @@ const Header = ({currentUser}) => (
                     Sign In
                 </Link>
             }
+            <CardIcon/>
         </div>
+        {
+            hidden ? null : <CardDropdown/>
+        }
 
     </div>
 )
 
 const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
+    currentUser: state.user.currentUser,
+    hidden: state.card.hidden
+
 })
 
 export default connect(mapStateToProps)(Header);

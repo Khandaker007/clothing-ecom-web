@@ -1,0 +1,33 @@
+.card-dropdown{
+    height: 35rem;
+    width: 28rem;
+    padding: 2rem;
+    border: 1px solid black;
+    background-color: white;
+
+    position: absolute;
+    right: 3rem;
+    top: 8rem;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .card-items{
+        background-color: blue;
+        height: 25rem;
+        width: 23rem;
+        // overflow: scroll;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    button{
+        
+    }
+}
+
+

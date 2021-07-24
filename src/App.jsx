@@ -26,7 +26,31 @@ import './App.scss'
 
 class App extends React.Component{
 
-  
+  /*
+     <-- HOOK -->
+    useEffect(() => {
+      if(!currenUser){
+        this.unsubsribeFromAuth = auth.onAuthStateChanged(async userAuth => {   
+      if(userAuth){
+
+        const userRef = await createUserProfileDocument(userAuth);
+        
+        userRef.onSnapshot(snapShot => {
+          setCurrentUser({
+              id: snapShot.id,
+              ...snapShot.data()
+          })
+        });
+      }
+
+      setCurrentUser(userAuth);
+      }
+
+      return () => {
+        this.unsubsribeFromAuth();
+      }
+    },[setCurrentUser]);
+  */
 
   unsubsribeFromAuth = null
 
