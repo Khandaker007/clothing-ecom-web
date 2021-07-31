@@ -16,17 +16,12 @@
     justify-content: space-between;
 
     .card-items{
-        background-color: blue;
         height: 25rem;
         width: 23rem;
-        // overflow: scroll;
+        overflow: auto;
 
         display: flex;
         flex-direction: column;
-    }
-
-    button{
-        
     }
 }
 
