@@ -1,0 +1,36 @@
+.checkout-item{
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    color: black;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+
+    &__img-container{
+        height: 10rem;
+        width: 8rem;
+    }
+    &__img{
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+    }
+    &__name{
+
+    }
+    &__quantity{
+        justify-self: center;
+    }
+    &__price{
+        justify-self: center;
+
+    }
+    &__remove-button{
+        justify-self: center;
+
+         font-weight: 700;
+         color: red;
+         cursor: pointer;
+    }
+}

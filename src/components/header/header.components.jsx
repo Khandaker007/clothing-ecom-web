@@ -6,6 +6,11 @@ import './header.style.scss'
 
 import logo from '../../assets/logo/crown.svg';
 
+// REDUX_reselect
+import { createStructuredSelector } from 'reselect';
+import { selectCurrentUser } from '../../redux/user/user.selector';
+import { selectCardHidden } from '../../redux/card/card.selector';
+
 // FIREBASE
 import {auth} from '../../firebase/firebase.utils'
 
@@ -47,10 +52,9 @@ const Header = ({currentUser, hidden}) => (
     </div>
 )
 
-const mapStateToProps = state => ({
-    currentUser: state.user.currentUser,
-    hidden: state.card.hidden
-
+const mapStateToProps = createStructuredSelector ({
+    currentUser: selectCurrentUser,
+    hidden: selectCardHidden
 })
 
 export default connect(mapStateToProps)(Header);

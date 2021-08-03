@@ -4,13 +4,16 @@ import { connect } from 'react-redux'
 
 // REDUX
 
-import {setCurrentUser} from './redux/user/user.action'
+import { setCurrentUser } from './redux/user/user.action'
+import { createStructuredSelector } from 'reselect'
+import { selectCurrentUser } from './redux/user/user.selector'
 
 // COMPONENTS
 import HomePage from './pages/home-page/home-page.component'
 import ShopPage from './pages/shop/shop.component'
 import Header from './components/header/header.components'
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component'
+import CheckoutPage from './pages/checkout/checkout.component'
 import SignUp from './components/sign-up/sign-up.component'
 
 import MensPage from './pages/mens/mens.component'
@@ -89,6 +92,7 @@ class App extends React.Component{
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />
+        <Route path='/checkout' component={CheckoutPage} />
         <Route exact path='/sign-in' render={() => this.props.currentUser ? <Redirect to='/' /> : <SignInAndSignUpPage/>}/>
         <Route path='/mens' component={MensPage} />
         <Route path='/womens' component={WomensPage} />
@@ -101,8 +105,8 @@ class App extends React.Component{
   )}
 }
 
-const mapStateToProps = state => ({
-  currentUser: state.user.currentUser
+const mapStateToProps = createStructuredSelector ({
+  currentUser: selectCurrentUser
 })
 
 const mapDispatchToProps = dispatch => ({

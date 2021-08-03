@@ -13,13 +13,13 @@ const cardReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 hidden: !state.hidden
             }
-        default:
-            return state;
         case CardActionType.CARD_ITEM:
             return{
                 ...state,
                 cardItems: addItemToCard(state.cardItems, action.payload)
             }
+        default:
+            return state;
     }
 }
 

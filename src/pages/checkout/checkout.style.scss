@@ -1,0 +1,43 @@
+.checkout-page{
+    display: flex;
+    justify-content: center;
+
+}
+.checkout{
+    width: 70%;
+    margin-top: 10rem;
+
+    display: flex;
+    flex-direction: column;
+    &__header{
+        font-size: 1.6rem;
+        color: black;
+        padding: 2rem;
+
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+
+        &--quantity{
+            justify-self: center;
+        }
+        &--price{
+            justify-self: center;
+        }
+        &--remove{
+            justify-self: center;
+        }
+    }
+    &__items{
+        padding: 2rem;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+
+    .total-price{
+        font-size: 3rem;
+        color: black;
+        align-self: flex-end;
+        margin-right: 2rem;
+        
+    }
+}
