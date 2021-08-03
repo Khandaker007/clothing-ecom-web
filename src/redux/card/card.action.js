@@ -5,6 +5,16 @@ export const toggleCardHidden = () => ({
 })
 
 export const addItems = (item) => ({
-    type: CardActionType.CARD_ITEM,
+    type: CardActionType.ADD_ITEM,
+    payload: item
+})
+
+export const removeItem = (item) => ({
+    type: CardActionType.REMOVE_ITEM,
+    payload: item
+})
+
+export const clearItemsFromCard = (item) => ({
+    type: CardActionType.CLEAR_ITEM_FROM_CARD,
     payload: item
 })

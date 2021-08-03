@@ -21,6 +21,18 @@
     }
     &__quantity{
         justify-self: center;
+
+        display: flex;
+
+        &--remove{
+            cursor: pointer;
+        }
+        &--value{
+            margin: 0 1rem;
+        }
+        &--add{
+            cursor: pointer;
+        }
     }
     &__price{
         justify-self: center;

@@ -1,5 +1,5 @@
 import CardActionType from '../card/card.type'
-import { addItemToCard } from './card.utils'
+import { addItemToCard, removeItemFromCard } from './card.utils'
 
 const INITIAL_STATE = {
     hidden: true,
@@ -13,10 +13,22 @@ const cardReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 hidden: !state.hidden
             }
-        case CardActionType.CARD_ITEM:
+        case CardActionType.ADD_ITEM:
             return{
                 ...state,
                 cardItems: addItemToCard(state.cardItems, action.payload)
+            }
+        case CardActionType.REMOVE_ITEM:
+            return{
+                ...state,
+                cardItems: removeItemFromCard(state.cardItems, action.payload)
+            }
+        case CardActionType.CLEAR_ITEM_FROM_CARD:
+            return{
+                ...state,
+                cardItems: state.cardItems.filter(
+                    cardItem => cardItem.id !== action.payload.id
+                )
             }
         default:
             return state;
