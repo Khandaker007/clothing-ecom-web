@@ -16,11 +16,6 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import CheckoutPage from './pages/checkout/checkout.component'
 import SignUp from './components/sign-up/sign-up.component'
 
-import MensPage from './pages/mens/mens.component'
-import WomensPage from './pages/womens/womens.component'
-import JacketsPage from './pages/jackets/jackets.component'
-import SneakersPage from './pages/sneakers/sneakers.component'
-import HatsPage from './pages/hats/hats.component'
 
 // FIREBASE
 import {auth, createUserProfileDocument} from './firebase/firebase.utils'
@@ -94,11 +89,6 @@ class App extends React.Component{
         <Route path='/shop' component={ShopPage} />
         <Route path='/checkout' component={CheckoutPage} />
         <Route exact path='/sign-in' render={() => this.props.currentUser ? <Redirect to='/' /> : <SignInAndSignUpPage/>}/>
-        <Route path='/mens' component={MensPage} />
-        <Route path='/womens' component={WomensPage} />
-        <Route path='/jackets' component={JacketsPage} />
-        <Route path='/sneakers' component={SneakersPage} />
-        <Route path='/hats' component={HatsPage} />
       </Switch>
     </BrowserRouter>
     </div>

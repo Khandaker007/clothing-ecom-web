@@ -4,21 +4,21 @@ export const DIRECTORY_ITEM_DATA = [
     imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
     id: 1,
     itemType: 'item-hats',
-    linkUrl: 'hats'
+    linkUrl: 'shop/hats'
   },
   {
     title: 'jackets',
     imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
     id: 2,
     itemType: 'item-jackets',
-    linkUrl: 'jackets'
+    linkUrl: 'shop/jackets'
   },
   {
     title: 'sneakers',
     imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
     id: 3,
     itemType: 'item-sneakers',
-    linkUrl: 'sneakers'
+    linkUrl: 'shop/sneakers'
   },
   {
     title: 'womens',
@@ -26,7 +26,7 @@ export const DIRECTORY_ITEM_DATA = [
     size: 'large',
     id: 4,
     itemType: 'item-womens',
-    linkUrl: 'womens'
+    linkUrl: 'shop/womens'
   },
   {
     title: 'mens',
@@ -34,6 +34,6 @@ export const DIRECTORY_ITEM_DATA = [
     size: 'large',
     id: 5,
     itemType: 'item-mens',
-    linkUrl: 'mens'
+    linkUrl: 'shop/mens'
   }
 ];

@@ -1,0 +1,13 @@
+.collection{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2rem;
+    margin: 2rem 0;
+}
+
+.title{
+    font-size: 3rem;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+}
