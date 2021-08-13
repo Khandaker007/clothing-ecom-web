@@ -6,6 +6,8 @@ import { selectCardItems, selectCardTotal } from '../../redux/card/card.selector
 
 // COMPONENTS
 import CheckoutItem from '../../components/checkout-item/checkout-item.component'
+import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
+
 import './checkout.style.scss'
 
 const CheckoutPage = ({cardItems, cardTotal}) => (
@@ -24,6 +26,11 @@ const CheckoutPage = ({cardItems, cardTotal}) => (
                 }
             </div>
             <span className='total-price'>Total: ${cardTotal}</span>
+            <h1 className="note-text">*Please use the following test creadit card for payments*</h1>
+            <h1 className="note-text">4242 4242 4242 4242 -- Exp: 01/20 -- CW: 123</h1>
+            <div className="stripe-container">
+                <StripeCheckoutButton price={cardTotal}/>
+            </div>
         </div>
     </div>
 )
